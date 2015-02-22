@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Main {
 
-    private static String szamok = "5,5,5,5,5,5";
+    private static String szamok = "5,23,64,23,-65";
     private static int eredmeny;
     private static String elvalaszto;
     private static String alapElvalaszto = ",";
@@ -28,7 +28,7 @@ public class Main {
     }
 
     private static void start() {
-
+        System.out.println("A feldolgozandó string: "+szamok);
         StringCalculator kalkulator = new StringCalculator();
         System.out.println("Adja meg az elvalasztó karaktert! Alapértelmezett elválasztó:,");
 
@@ -47,7 +47,7 @@ public class Main {
         }
 
         eredmeny = kalkulator.add(szamok);
-        System.out.println("Az eredmény:" + eredmeny);
+        System.out.println("\nAz eredmény:" + eredmeny);
 
     }
 }

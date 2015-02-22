@@ -5,7 +5,8 @@
  */
 package com.mycompany.cucc;
 
-import jdk.nashorn.internal.parser.TokenType;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -26,22 +27,35 @@ public class StringCalculator {
         String[] szamok;
         szamok = numbers.split(elvalaszto);
 
-//        if (szamok.length > 2) {
-//            System.out.println("Túl sok számot adott meg");           
-//        }
-
+       
         int osszeg = 0;
+        int szam;
+        List<Integer> negatives = new ArrayList<>();
         
         try {
             for (String szamok1 : szamok) {
-                osszeg += Integer.parseInt(szamok1);
+                szam = Integer.parseInt(szamok1);
+                //ha negatív a szám akkor belerakja a listába
+                if (szam < 0) {
+                    negatives.add(szam);
+                }
+                osszeg += szam;
+
             }
+            if (!negatives.isEmpty()) {
+                //ha a lista nem üres akkor kiirja a tartalmát és a visszatérési érték 0
+                System.out.print("Negatív szám nem engedélyezett: ");
+                for (Integer negative : negatives) {
+                    System.out.print(negative);
+                }
+                return 0;
+            }
+            return osszeg;
         } catch (Exception e) {
             System.out.println("Hiba a string szétválasztásakor");
             return 0;
         }
 
-        return osszeg;
     }
 
     public String getElvalaszto() {
