@@ -5,6 +5,8 @@
  */
 package com.mycompany.cucc;
 
+import jdk.nashorn.internal.parser.TokenType;
+
 /**
  *
  * @author Toooooomi
@@ -24,9 +26,9 @@ public class StringCalculator {
         String[] szamok;
         szamok = numbers.split(elvalaszto);
 
-        if (szamok.length > 3) {
-            System.out.println("Túl sok számot adott meg");
-        }
+//        if (szamok.length > 2) {
+//            System.out.println("Túl sok számot adott meg");           
+//        }
 
         int osszeg = 0;
         int szam;

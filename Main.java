@@ -13,7 +13,7 @@ package com.mycompany.cucc;
 
 public class Main {
     
-     private static String szamok="5,5,5";
+     private static String szamok="5,5,5,5,5,5";
      private static int eredmeny;
     
    
