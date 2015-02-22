@@ -13,13 +13,13 @@ import jdk.nashorn.internal.parser.TokenType;
  */
 public class StringCalculator {
 
-    private String elvalaszto = ",";
+    private String elvalaszto;
 
     public int add(String numbers) {
 
         if (numbers == null) {
 
-            System.out.println("Nem adott meg egy értéket sem");
+            System.out.println("Üres String");
             return 0;
         }
 
@@ -31,14 +31,14 @@ public class StringCalculator {
 //        }
 
         int osszeg = 0;
-        int szam;
-
+        
         try {
             for (String szamok1 : szamok) {
                 osszeg += Integer.parseInt(szamok1);
             }
         } catch (Exception e) {
-            System.out.println("Rossz érték(nem számot adott meg)");
+            System.out.println("Hiba a string szétválasztásakor");
+            return 0;
         }
 
         return osszeg;
